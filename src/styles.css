@@ -1,0 +1,37 @@
+/* Background for the search bar and filter dropdown area */
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d2deeb;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* Width of dropdown filter */
+ion-item {
+  width: 50%; /* Adjust width as needed */
+}
+
+/* Padding for the table data area */
+.table-data-container {
+  padding: 10px; /* Adjust padding as needed */
+}
+
+/* Background color to table header */
+.header-row {
+  background-color: #c1d8f0;
+  font-weight: bold;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+}
+
+/* Alternate row colors */
+.data-row:nth-child(even) {
+  background-color: #e1f1fd; /* Change this color code to your desired alternate color */
+}
+
+.data-row:nth-child(odd) {
+  background-color: #ffffff; /* Change this color code to your desired base color */
+}

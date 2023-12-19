@@ -1,0 +1,53 @@
+<div class="ion-page" id="main-menu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Cat Listing</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Main content -->
+  <ion-content>
+    <div class="search-filter-container">
+      <!-- Filter dropdown -->
+      <ion-item>
+        <ion-select
+          label="Search by"
+          [(ngModel)]="selectedFilter"
+          (ionChange)="filterData()"
+        >
+          <ion-select-option value="Breed">Breed</ion-select-option>
+          <ion-select-option value="Country">Country</ion-select-option>
+          <ion-select-option value="Origin">Origin</ion-select-option>
+          <ion-select-option value="Coat">Coat</ion-select-option>
+          <ion-select-option value="Pattern">Pattern</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- Search bar -->
+      <ion-searchbar
+        placeholder="Search"
+        [(ngModel)]="defaultSearchValue"
+        (ionChange)="filterData()"
+      ></ion-searchbar>
+    </div>
+    <div class="table-data-container">
+      <!-- Data table -->
+      <ion-grid>
+        <!-- Table headers -->
+        <ion-row class="header-row">
+          <ion-col>Breed</ion-col>
+          <ion-col>Country</ion-col>
+          <ion-col>Origin</ion-col>
+          <ion-col>Coat</ion-col>
+          <ion-col>Pattern</ion-col>
+        </ion-row>
+        <!-- Table data -->
+        <ion-row *ngFor="let breed of filteredData" [class.data-row]="true">
+          <ion-col>{{ breed.breed }}</ion-col>
+          <ion-col>{{ breed.country }}</ion-col>
+          <ion-col>{{ breed.origin }}</ion-col>
+          <ion-col>{{ breed.coat }}</ion-col>
+          <ion-col>{{ breed.pattern }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-content>
+</div>
